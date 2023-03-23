@@ -8,8 +8,6 @@
     <meta name="author" content="@lang('meta.author')">
     @vite('resources/css/app.css')
     <title>{{ env('APP_NAME') }}</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
-            crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
