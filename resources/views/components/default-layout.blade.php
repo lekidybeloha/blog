@@ -40,7 +40,7 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 mt-5">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">@lang('sidebar.last_article')</h5>
