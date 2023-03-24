@@ -1,11 +1,18 @@
 import React from "react";
-import {usePage} from "@inertiajs/react";
+import {useForm, usePage} from "@inertiajs/react";
+
 const Category = () => {
     const {categories} = usePage().props;
+    const {data, setData, post, processing, errors} = useForm({
+        'name': '',
+        'status': 0,
+    })
     return (
         <div className="container mt-3">
             <h2>Catégories</h2>
-            <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Créer une catégorie</button>
+            <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Créer une
+                catégorie
+            </button>
             <table className="table table-light mt-3">
                 <thead>
                 <tr>
@@ -31,21 +38,44 @@ const Category = () => {
                         </tr>
                     ))
                 ) : (
-                    <tr><td colSpan="4" className="text-center">Aucune catégorie</td></tr>
+                    <tr>
+                        <td colSpan="4" className="text-center">Aucune catégorie</td>
+                    </tr>
                 )}
                 </tbody>
             </table>
 
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <h4>Créer une nouvelle catégorie</h4>
                             <form method="POST">
+                                <input
+                                    type="text"
+                                    placeholder="Nom de la catégorie"
+                                    className="form-control"
+                                    value={data.name}
+                                    onChange={e => setData('name', e.target.value)}
+                                />
+                                <div className="form-check form-switch">
+                                    <input
+                                        className="form-check-input"
+                                        name="status"
+                                        value="1"
+                                        type="checkbox"
+                                        role="switch"
+                                        id="flexSwitchCheckDefault"
+                                        onChange={e => setData('status', e.target.value)}
+                                    />
+                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Actif</label>
+                                </div>
 
                             </form>
                         </div>
