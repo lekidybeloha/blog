@@ -6,8 +6,9 @@
     <meta name="keywords" content="@lang('meta.keywords')">
     <meta name="description" content="@lang('meta.description')">
     <meta name="author" content="@lang('meta.author')">
-    @vite('resources/js/app.jsx')
+    @routes
     @inertiaHead
+    @vite('resources/js/app.jsx')
     @vite('resources/css/app.css')
     <title>{{ env('APP_NAME') }}</title>
 </head>

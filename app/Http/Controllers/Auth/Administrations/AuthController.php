@@ -20,7 +20,7 @@ class AuthController extends Controller
     public function attempt(Request $request)
     {
         if(Auth::guard('administrators')->attempt($request->only(['username', 'password'])))
-            return redirect()->route('admin-dashboard');
+            return redirect()->route('admin.dashboard');
         else
             return redirect()
                 ->back()
