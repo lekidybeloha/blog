@@ -5,3 +5,5 @@ DIMBINIAINA Elkana Vinet
 ## Stack
 - Laravel
 - Bootstrap
+- Inertia
+- Reactjs
