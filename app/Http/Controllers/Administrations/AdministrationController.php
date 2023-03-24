@@ -3,14 +3,51 @@
 namespace App\Http\Controllers\Administrations;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Foundation\Application;
+use App\Repositories\ArticleRepository;
+use App\Repositories\CategoryRepository;
+use Illuminate\Validation\Rules\In;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class AdministrationController extends Controller
 {
-    public function index(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    private ArticleRepository $articeRepository;
+    private CategoryRepository $categoryRepository;
+
+    public function __construct()
     {
-        return view('administrations.index');
+        $this->articeRepository = new ArticleRepository();
+        $this->categoryRepository = new CategoryRepository();
+
+    }
+
+    public function index(): Response
+    {
+        $this->setView();
+        return Inertia::render('Administrations/Dashboard', [
+            'articles' => $this->articeRepository->all()->count(),
+            'categories' => $this->categoryRepository->all()->count(),
+        ]);
+    }
+
+    public function categories(): Response
+    {
+        $this->setView();
+        return Inertia::render('Administrations/Category', [
+            'categories' => $this->categoryRepository->all()
+        ]);
+    }
+
+    public function articles(): Response
+    {
+        $this->setView();
+        return Inertia::render('Administrations/Article', [
+            'articles' => $this->articeRepository->all()
+        ]);
+    }
+
+    protected function setView()
+    {
+        Inertia::setRootView('administrations/index');
     }
 }
