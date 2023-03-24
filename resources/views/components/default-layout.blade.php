@@ -60,6 +60,6 @@
                 Vinet</a> | Crédits photos : <a target="_blank" href="https://www.pexels.com">Pexels</a></small>
     </div>
 </footer>
-@vite('resources/js/app.js')
+@vite('resources/js/app.jsx')
 </body>
 </html>

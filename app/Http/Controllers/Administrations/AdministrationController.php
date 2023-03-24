@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Administrations;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Foundation\Application;
+use Illuminate\Validation\Rules\In;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class AdministrationController extends Controller
 {
-    public function index(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    public function index(): Response
     {
-        return view('administrations.index');
+        Inertia::setRootView('administrations/index');
+        return Inertia::render('Dashboard');
     }
 }
