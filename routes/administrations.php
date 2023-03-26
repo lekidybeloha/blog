@@ -18,6 +18,9 @@ Route::prefix('dashboard')
         Route::prefix('category')->group(function () {
             Route::get('/', [AdministrationController::class, 'categories'])->name('admin.category');
             Route::post('/', [CategoryController::class, 'create'])->name('admin.category.create');
+            Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('admin.category.edit')->whereNumber('category');
+            Route::put('/edit/{category}', [CategoryController::class, 'editProcess'])->name('admin.category.edit.post')->whereNumber('category');
+            Route::delete('/delete/{category}', [CategoryController::class, 'delete'])->name('admin.category.delete')->whereNumber('category');
         });
         Route::get('/articles', [AdministrationController::class, 'articles'])->name('admin.article');
     });

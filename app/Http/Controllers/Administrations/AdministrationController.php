@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Administrations;
 use App\Http\Controllers\Controller;
 use App\Repositories\ArticleRepository;
 use App\Repositories\CategoryRepository;
-use Illuminate\Validation\Rules\In;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -23,7 +22,7 @@ class AdministrationController extends Controller
 
     public function index(): Response
     {
-        $this->setView();
+        parent::setInertiaAdminView();
         return Inertia::render('Administrations/Dashboard', [
             'articles' => $this->articeRepository->all()->count(),
             'categories' => $this->categoryRepository->all()->count(),
@@ -32,7 +31,7 @@ class AdministrationController extends Controller
 
     public function categories(): Response
     {
-        $this->setView();
+        parent::setInertiaAdminView();
         return Inertia::render('Administrations/Categories/Category', [
             'categories' => $this->categoryRepository->all()
         ]);
@@ -40,14 +39,10 @@ class AdministrationController extends Controller
 
     public function articles(): Response
     {
-        $this->setView();
+        parent::setInertiaAdminView();
         return Inertia::render('Administrations/Article', [
             'articles' => $this->articeRepository->all()
         ]);
     }
 
-    protected function setView()
-    {
-        Inertia::setRootView('administrations/index');
-    }
 }

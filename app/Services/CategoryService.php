@@ -10,4 +10,14 @@ class CategoryService
     {
         return Category::firstOrCreate($data);
     }
+
+    public  function update($category , $data)
+    {
+        return $category->update($data);
+    }
+
+    public function delete($category)
+    {
+        return $category->delete();
+    }
 }

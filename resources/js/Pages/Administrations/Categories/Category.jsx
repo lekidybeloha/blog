@@ -1,5 +1,5 @@
 import React from "react";
-import {useForm, usePage} from "@inertiajs/react";
+import {router, useForm, usePage} from "@inertiajs/react";
 
 const Category = () => {
     const {categories} = usePage().props;
@@ -13,6 +13,17 @@ const Category = () => {
         post(route('admin.category.create'));
 
     }
+
+    const handleDelete = (e) => {
+        e.preventDefault();
+        if(confirm('Voulez vous vraiment supprimer cette catégorie ?') == true){
+            let data = {
+                '_method' : 'DELETE'
+            }
+            router.post(route('admin.category.delete', e.target.elements.category_id.value), data)
+        }
+    }
+
     return (
         <div className="container mt-3">
             <h2>Catégories</h2>
@@ -39,7 +50,13 @@ const Category = () => {
                                 (<span className="badge text-bg-success">Actif</span>
                                 )}</td>
                             <td>
-
+                                <div className="d-flex">
+                                    <a href={route('admin.category.edit', category.id)} className="btn">Edit</a>
+                                    <form onSubmit={handleDelete}>
+                                        <input type="hidden" name="category_id" value={category.id}/>
+                                        <button type="submit" className="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     ))
