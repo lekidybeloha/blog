@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Str;
 
 class Article extends Model
 {
@@ -35,5 +36,14 @@ class Article extends Model
     public function getCategoryNameAttribute()
     {
         return $this->category->name;
+    }
+
+    //This method is used to generate automatic slug for url
+    protected static function booted()
+    {
+        static::created(function (Article $article){
+            $article->slug = Str::slug($article->title).'-'.$article->id;
+            $article->save();
+        });
     }
 }

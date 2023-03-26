@@ -44,7 +44,15 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">@lang('sidebar.last_article')</h5>
-
+                    <ul class="list-group">
+                        @foreach($articles as $one)
+                            <li>
+                                <a href="{{ route('category.or.article', ['category_slug' => $one->category->slug, 'article_slug' => $one->slug]) }}">
+                                    {{ $one->title }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

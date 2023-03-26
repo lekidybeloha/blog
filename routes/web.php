@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ApplicationController::class, 'index'])->name('home');
+Route::get('/{category_slug}/{article_slug?}', [ApplicationController::class, 'getCategoryOrArticle'])->name('category.or.article');
 Route::get('/test', function (){
     $test = \App\Models\Article::find(1);
     echo $test->content;

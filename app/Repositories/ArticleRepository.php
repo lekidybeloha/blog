@@ -11,4 +11,9 @@ class ArticleRepository
     {
         return Article::all();
     }
+
+    public function findBySlug($slug)
+    {
+        return Article::where('slug', '=', $slug)->first();
+    }
 }
