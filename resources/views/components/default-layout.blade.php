@@ -21,10 +21,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">@lang('menu.home')</a>
+                    <a class="nav-link @if(Route::current()->getName() == 'home') active @endif" aria-current="page"
+                       href="{{ route('home') }}">@lang('menu.home')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">@lang('menu.tutorials')</a>
+                    <a class="nav-link @if(str_contains(Request()->category_slug, 'tuto')) active @endif"
+                       href="{{ route('category.or.article', ['category_slug' => 'tutorials', 'article_slug' => '']) }}">@lang('menu.tutorials')</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">@lang('menu.contact')</a>
