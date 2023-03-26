@@ -7,6 +7,12 @@ const Category = () => {
         'name': '',
         'status': 0,
     })
+
+    const submit = (e) => {
+        e.preventDefault();
+        post(route('admin.category.create'));
+
+    }
     return (
         <div className="container mt-3">
             <h2>Catégories</h2>
@@ -25,7 +31,7 @@ const Category = () => {
                 <tbody>
                 {categories.length > 0 ? (
                     categories.map(category => (
-                        <tr>
+                        <tr key={category.id}>
                             <td>{category.id}</td>
                             <td>{category.name}</td>
                             <td>{category.status == 0 ?
@@ -54,9 +60,9 @@ const Category = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                         </div>
-                        <div className="modal-body">
-                            <h4>Créer une nouvelle catégorie</h4>
-                            <form method="POST">
+                        <form method="POST" onSubmit={submit}>
+                            <div className="modal-body">
+                                <h4>Créer une nouvelle catégorie</h4>
                                 <input
                                     type="text"
                                     placeholder="Nom de la catégorie"
@@ -76,13 +82,13 @@ const Category = () => {
                                     />
                                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Actif</label>
                                 </div>
-
-                            </form>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Annuler
+                                </button>
+                                <button type="submit" className="btn btn-primary">Enregistrer</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

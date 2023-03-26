@@ -33,7 +33,7 @@ class AdministrationController extends Controller
     public function categories(): Response
     {
         $this->setView();
-        return Inertia::render('Administrations/Category', [
+        return Inertia::render('Administrations/Categories/Category', [
             'categories' => $this->categoryRepository->all()
         ]);
     }
