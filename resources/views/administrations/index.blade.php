@@ -9,6 +9,9 @@
     @routes
     @inertiaHead
     @vite('resources/js/app.jsx')
+    @if(Route::current()->getName() == 'admin.article.create')
+        <script src="https://cdn.tiny.cloud/1/{{ env('TINY_MCE_KEY') }}/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    @endif
     @vite('resources/css/app.css')
     <title>{{ env('APP_NAME') }}</title>
 </head>

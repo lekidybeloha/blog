@@ -13,7 +13,7 @@ use Inertia\Response;
 
 class CategoryController extends Controller
 {
-    private $categoryService;
+    private CategoryService $categoryService;
 
     public function __construct()
     {

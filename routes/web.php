@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ApplicationController::class, 'index'])->name('home');
+Route::get('/test', function (){
+    $test = \App\Models\Article::find(1);
+    echo $test->content;
+});

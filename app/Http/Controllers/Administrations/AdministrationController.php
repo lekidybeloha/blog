@@ -40,7 +40,7 @@ class AdministrationController extends Controller
     public function articles(): Response
     {
         parent::setInertiaAdminView();
-        return Inertia::render('Administrations/Article', [
+        return Inertia::render('Administrations/Articles/Article', [
             'articles' => $this->articeRepository->all()
         ]);
     }
