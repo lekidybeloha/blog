@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->integer('user_id');
+            $table->string('slug')->nullable();
             $table->text('title');
             $table->longText('content');
             $table->tinyInteger('status')->default(0);

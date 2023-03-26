@@ -11,4 +11,9 @@ class CategoryRepository
     {
         return Category::all();
     }
+
+    public function findBySlug($slug)
+    {
+        return Category::where('slug', '=', $slug)->first();
+    }
 }
