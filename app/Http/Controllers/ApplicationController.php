@@ -25,7 +25,9 @@ class ApplicationController extends Controller
 
     public function getCategoryOrArticle($category_slug, $article_slug = ''): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $category = $this->categoryRepository->findBySlug($category_slug);
+        if($category_slug)
+            $category = $this->categoryRepository->findBySlug($category_slug);
+
         if(!$category)
             abort(404);
 
