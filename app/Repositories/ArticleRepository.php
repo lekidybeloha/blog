@@ -9,7 +9,12 @@ class ArticleRepository
 {
     public function all(): Collection
     {
-        return Article::all();
+        return Article::orderBy('created_at', 'DESC')->get();
+    }
+
+    public function lastFive()
+    {
+        return Article::orderBy('created_at', 'DESC')->take(5)->get();
     }
 
     public function findBySlug($slug)
