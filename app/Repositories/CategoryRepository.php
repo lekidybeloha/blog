@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class CategoryRepository
 {
@@ -12,8 +14,8 @@ class CategoryRepository
         return Category::all();
     }
 
-    public function findBySlug($slug)
+    public function findBySlug($slug): Model|Builder|null
     {
-        return Category::where('slug', '=', $slug)->first();
+        return Category::with('articles')->where('slug', '=', $slug)->first();
     }
 }
