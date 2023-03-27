@@ -17,7 +17,7 @@ class DefaultLayout extends Component
     public function __construct()
     {
         $articleRepository = new ArticleRepository();
-        $this->articles = $articleRepository->all();
+        $this->articles = $articleRepository->lastFive();
     }
 
     /**

@@ -10,7 +10,7 @@
     <title>{{ env('APP_NAME') }}</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/img/mini-logo.png') }}"
                                                                 class="img-fluid"></a>
@@ -42,10 +42,12 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2 mt-5">
+        <div class="col-md-2 pt-5 shadow-sm">
             <div class="card">
+                <div class="card-img-top">
+                    <h5 class="bg-secondary-subtle p-3">@lang('sidebar.last_article')</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">@lang('sidebar.last_article')</h5>
                     <ul class="list-group">
                         @foreach($articles as $one)
                             <li>
@@ -71,5 +73,38 @@
     </div>
 </footer>
 @vite('resources/js/app.jsx')
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
+        crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9832408140141934"
+     data-ad-slot="1380738540"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
+        crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-d5-1k-s-p9+w3"
+     data-ad-client="ca-pub-9832408140141934"
+     data-ad-slot="5143534366"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
+        crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-d5-1k-s-p9+w3"
+     data-ad-client="ca-pub-9832408140141934"
+     data-ad-slot="7460219281"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
