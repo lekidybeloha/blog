@@ -29,7 +29,7 @@
                        href="{{ route('category.or.article', ['category_slug' => 'tutorials', 'article_slug' => '']) }}">@lang('menu.tutorials')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">@lang('menu.contact')</a>
+                    <a class="nav-link @if(Route::current()->getName() == 'contact') active @endif" href="{{ route('contact') }}">@lang('menu.contact')</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
