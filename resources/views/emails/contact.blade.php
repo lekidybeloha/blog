@@ -6,15 +6,22 @@
     <meta name="keywords" content="@lang('meta.keywords')">
     <meta name="description" content="@lang('meta.description')">
     <meta name="author" content="@lang('meta.author')">
-    @routes
-    @inertiaHead
-    @vite('resources/js/app.jsx')
     @vite('resources/css/app.css')
-    <title>{{ env('APP_NAME') }}</title>
+    <title>Email de contact</title>
 </head>
 <body>
-@inertia
-</body>
+<div class="container-fluid">
+    <h2>Demande de contact</h2>
+    <p>
+        Vous avez reçu une demande de contact :
+    <ul>
+        <li>Nom : {{ $data['name'] }}</li>
+        <li>Email : {{ $data['email'] }}</li>
+        <li>Contenu : {{ $data['message'] }}</li>
+    </ul>
+    </p>
+</div>
+
 <footer class="">
     <div class="text-center">
         <small class="text-center">Copyright © 2022 <a target="_blank" href="https://www.elkana-vinet.com">Elkana

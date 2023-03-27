@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ApplicationController::class, 'index'])->name('home');
 Route::get('/{category_slug}/{article_slug?}', [ApplicationController::class, 'getCategoryOrArticle'])
     ->name('category.or.article')->whereIn('category_slug', ['tutorials']);
+Route::get('/contact', [ApplicationController::class, 'contact'])->name('contact');
+Route::post('/contact', [ApplicationController::class, 'sendContact'])->name('contact.send');

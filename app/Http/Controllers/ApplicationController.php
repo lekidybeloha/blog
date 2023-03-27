@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ApplicationController extends Controller
 {
@@ -41,6 +42,18 @@ class ApplicationController extends Controller
 
             return view('articles.one', compact('article'));
         }
+    }
 
+    public function contact(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('contact');
+    }
+
+    public function sendContact(Request $request)
+    {
+        if(Mail::send(['html' => 'emails.contact'], ['data' => $request->all()], function ($message){
+            $message->to('contact@elkana-vinet.com');
+        }))
+            return redirect()->back()->with('success' , true);
     }
 }
