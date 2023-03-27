@@ -54,7 +54,7 @@ const Create = () => {
                             plugins: [
                                 'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview', 'anchor',
                                 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                                'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                                'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount', 'codesample'
                             ],
                             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
                             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
