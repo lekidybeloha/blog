@@ -1,6 +1,11 @@
 <x-default-layout>
     <div class="container mt-5">
         <h2>Contact</h2>
+        @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                Votre message a bien été envoyé.
+            </div>
+        @endif
         <form id="contact-form" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Nom</label>
