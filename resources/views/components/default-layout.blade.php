@@ -73,38 +73,5 @@
     </div>
 </footer>
 @vite('resources/js/app.jsx')
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
-        crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-9832408140141934"
-     data-ad-slot="1380738540"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
-        crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-d5-1k-s-p9+w3"
-     data-ad-client="ca-pub-9832408140141934"
-     data-ad-slot="5143534366"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
-        crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-d5-1k-s-p9+w3"
-     data-ad-client="ca-pub-9832408140141934"
-     data-ad-slot="7460219281"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </body>
 </html>
