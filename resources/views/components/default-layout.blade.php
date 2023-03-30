@@ -57,6 +57,14 @@
                             </li>
                         @endforeach
                     </ul>
+                    <div>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-format="fluid"
+                             data-ad-layout-key="-d5-1k-s-p9+w3"
+                             data-ad-client="ca-pub-9832408140141934"
+                             data-ad-slot="5143534366"></ins>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,6 +80,12 @@
                 Vinet</a> | Crédits photos : <a target="_blank" href="https://www.pexels.com">Pexels</a></small>
     </div>
 </footer>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
+        ></script>
+
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 @vite('resources/js/app.jsx')
 </body>
 </html>

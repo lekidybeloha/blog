@@ -29,6 +29,12 @@
                 >Envoyer</button>
             </div>
             @csrf
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-9832408140141934"
+                 data-ad-slot="1380738540"></ins>
         </form>
     </div>
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -38,4 +44,10 @@
         }
     </script>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9832408140141934"
+    ></script>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </x-default-layout>
